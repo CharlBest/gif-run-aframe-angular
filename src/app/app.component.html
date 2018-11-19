@@ -1,0 +1,46 @@
+<!-- https://stackblitz.com/github/urish/vr-hero-aframe -->
+
+
+<a-camera #camera>
+  <a-entity id="sled"
+    gltf-model="#sled"
+    rotation="0 180 0"
+    position="0 0.5 -4"
+    scale="0.7 0.7 0.7"></a-entity>
+
+  <a-text [attr.value]="'Score: ' + score"
+    position="2 1.5 -4"
+    color="white"></a-text>
+
+  <a-text [attr.value]="'Presents: ' + (presents.length - (presentCount - 1))"
+    position="2 1.2 -4"
+    color="white"></a-text>
+</a-camera>
+<a-entity scale="1 1 1">
+
+  <ng-container *ngFor="let present of presents">
+    <a-entity id="present-element-id-{{present}}"
+      [attr.gltf-model]="'#present_' + ((present % 4 == 1) ? '1' : (present % 4 == 2) ? '2' : (present % 4 == 3) ? '3' : (present % 4 == 0) ? '4' : '')"
+      position="0 -10 -4"
+      scale="0.7 0.7 0.7"></a-entity>
+  </ng-container>
+
+  <ng-container *ngFor="let house of houses">
+    <a-entity id="house-element-id-{{house}}"
+      gltf-model="#house"
+      [attr.position]="house + ' -2.7 -4'"
+      scale="0.8 0.8 0.8"
+      rotation="0 -90 0"></a-entity>
+  </ng-container>
+
+</a-entity>
+
+<!-- <a-plane position="0 1.6 -6"
+                 width="4"
+                 height="4"
+                 color="#7BC8A4"></a-plane> -->
+<a-entity position="0 2.25 -15"
+  particle-system="preset: snow; maxAge: 1; particleCount: 2000"></a-entity>
+
+<a-sky color="#130c16"></a-sky>
+<!-- <a-sky material="src: #sky"></a-sky> -->

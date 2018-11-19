@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Frame</title>
+  <base href="/">
+
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1">
+  <link rel="icon"
+    type="image/x-icon"
+    href="favicon.ico">
+  <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-animation-component@^5.1.2/dist/aframe-animation-component.min.js"></script>
+  <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
+</head>
+
+<body>
+  <a-scene>
+
+    <a-assets>
+      <a-asset-item id="house"
+        src="assets/house.gltf"></a-asset-item>
+      <a-asset-item id="sled"
+        src="assets/sled.gltf"></a-asset-item>
+      <a-asset-item id="present_1"
+        src="assets/present_1.gltf"></a-asset-item>
+      <a-asset-item id="present_2"
+        src="assets/present_2.gltf"></a-asset-item>
+      <a-asset-item id="present_3"
+        src="assets/present_3.gltf"></a-asset-item>
+      <a-asset-item id="present_4"
+        src="assets/present_4.gltf"></a-asset-item>
+      <img id="sky"
+        src="assets/bg.gif">
+    </a-assets>
+
+    <a-entity app-root></a-entity>
+
+  </a-scene>
+</body>
+
+</html>
